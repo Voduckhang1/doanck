@@ -58,9 +58,9 @@ include_once "../ketnoisql/ketnoi.php";
                 break;
                 case "quanlybaivietchitiet": include_once  "quanly-baiviet-chitiet.php";
                 break;
-                case "quanlydonhang": include_once  "quanly-donhang.php";
+                case "quanlydonhang": include_once  "./quanlydonhang.php";
                 break;
-                case "quanlydonhangchitiet": include_once  "quanly-donhang-chitiet.php";
+                case "quanlydonhangchitiet": include_once  "./quanly-donhang-chitiet.php";
                 break;
             }
         }
