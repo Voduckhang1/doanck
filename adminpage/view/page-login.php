@@ -20,7 +20,7 @@
                         </a>
                     </div>
                     <div class="login-form">
-                        <form action="controller/logincontroller.php" method="POST"enctype="multipart/form-data">
+                        <form action="../controller/logincontroller.php" method="POST"enctype="multipart/form-data">
                             <div class="form-group">
                                 <label>Tên người dùng hoặc Địa chỉ Email</label>
                                 <input type="text" class="form-control" name="txt_email">
