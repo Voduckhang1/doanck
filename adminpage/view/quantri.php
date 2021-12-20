@@ -60,7 +60,7 @@ include_once "../ketnoisql/ketnoi.php";
                 break;
                 case "quanlydonhang": include_once  "./quanlydonhang.php";
                 break;
-                case "quanlydonhangchitiet": include_once  "./quanly-donhang-chitiet.php";
+                case "quanlydonhangchitiet": include_once  "./quanlydonhangchitiet.php";
                 break;
             }
         }
