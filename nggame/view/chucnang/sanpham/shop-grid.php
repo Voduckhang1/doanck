@@ -1,7 +1,4 @@
-<?php
 
-include_once "../controller/shopgridcontroller.php";
-?>
     <!-- Breadcrumb Section Begin -->
     <section class="breadcrumb-section set-bg" data-setbg="img/banner/banner5.jpg">
         <div class="container">
@@ -56,31 +53,121 @@ include_once "../controller/shopgridcontroller.php";
                 </div>
                 <div class="row">
                    
-                <?php
-                   //Duyệt tất cả sản phẩm đang có trong database
-                    while ($row = mysqli_fetch_array($querysp)){
-                    ?>
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="featured__item">
-    
-                        <div class="featured__item__pic set-bg" data-setbg="../../admin/view/pictures/<?php echo $row['anh_sp']?>">
-                                <ul class="featured__item__pic__hover">
-                                <li><a href="index.php?page_layout=shop-details&id_sp=<?php echo $row['id_sp']; ?>"><i class="fa fa-search"></i></a></li>
-                                    <li><a href="index.php?page_layout=shop-grid"><i class="fa fa-retweet"></i></a></li>
-                                    <li><a href="chucnang/giohang/themhang.php?id_sp=<?php echo $row['id_sp']?>"><i class="fa fa-shopping-cart"></i></a></li>
+                        <div class="product__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/call-of-duty-vanguard-ps5.jpg">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="shop-details.php"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="shop-details.php"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
                             <div class="featured__item__text">
-                            <h6><a href="index.php?page_layout=shop-details&id_sp=<?php echo $row['id_sp']; ?>"><?php echo $row['ten_sp']; ?></a></h6>
-                            <h5><?php  echo number_format($row['don_gia'], 0, '', '.')." VNĐ"; ?></h5>
-            
-
+                            <h6><a href="shop-details.php">Call of Duty: Vanguard - EU</a></h6>
+                            <h5>1,780,000₫</h5>
                         </div>
                         </div>
-                  
                     </div>
-                    <?php }?>
-                  
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="product__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/marvels-guardians-of-the-galaxy-ps5.jpg">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="shop-details.php"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="shop-details.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                            <h6><a href="shop-details.php">Marvel's Guardians of the Galaxy - US</a></h6>
+                            <h5>1,630,000₫</h5>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="product__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/battlefield-2042-ps5.jpg">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="shop-details.php"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="shop-details.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                            <h6><a href="shop-details.php">Battlefield 2042 - US</a></h6>
+                            <h5>1,330,000₫</h5>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="product__discount__item">
+                        <div class="product__discount__item__pic set-bg" data-setbg="img/product/tales-of-arise-ps5.jpg">
+                                <div class="product__discount__percent">-20%</div>
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="shop-details.php"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="shop-details.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__discount__item__text">
+                                <h5><a href="shop-details.php">Tales of Arise - US</a></h5>
+                                <div class="product__item__price">1,280,000₫<span>1,580,000₫</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="product__discount__item">
+                        <div class="product__discount__item__pic set-bg" data-setbg="img/product/elden-ring-ps5.jpg">
+                                <div class="product__discount__percent">-20%</div>
+                                <ul class="product__item__pic__hover">
+
+                                    <li><a href="shop-details.php"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="shop-details.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__discount__item__text">
+                                <h5><a href="shop-details.php">Elden Ring</a></h5>
+                                <div class="product__item__price">1,280,000₫<span>1,580,000₫</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="product__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/code-vein-ps4.jpg">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="shop-details.php"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="shop-details.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                            <h6><a href="shop-grid.php">Code Vein</a></h6>
+                            <h5>730,000₫</h5>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="product__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/crysis-remastered-trilogy-ps4.jpg">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="shop-details.php"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="shop-details.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                            <h6><a href="shop-grid.php">Crysis Remastered Trilogy</a></h6>
+                            <h5>1,330,000₫</h5>
+                        </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="product__item">
+                        <div class="featured__item__pic set-bg" data-setbg="img/product/grand-theft-auto-the-trilogy-the-definitive-edition-ps4.jpg">
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="shop-details.php"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="shop-details.php"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="featured__item__text">
+                            <h6><a href="shop-grid.php">Grand Theft Auto: The Trilogy [The Definitive Edition] </a></h6>
+                            <h5>1,330,000₫</h5>
+                        </div>
+                        </div>
+                    </div>
                   
                 </div>
                 <?php
