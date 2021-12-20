@@ -1,4 +1,8 @@
 
+<?php
+include_once '../controller/sanpham-add-controller.php';
+
+?>
         <div class="breadcrumbs">
             <div class="breadcrumbs-inner">
                 <div class="row m-0">
@@ -65,7 +69,14 @@
                                         <div class="col-12 col-md-9">
                                             <select name="id_dm_sp" id="select-input" class="form-control">
                                                 <option value="unselect">Xin chọn thể loại</option>
-                                               
+                                                <?php 
+                                               while ($row = mysqli_fetch_array($query)){
+                                                ?>
+                                                <option value="<?php echo $row['id_dm_sp']?>"><?php echo $row['ten_dm_sp']?></option>
+                        
+                                                <?php
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
@@ -74,14 +85,21 @@
                                         <div class="col-12 col-md-9">
                                             <select name="id_ncc" id="select-input" class="form-control">
                                                 <option value="unselect">Xin chọn nhà cung cấp</option>
-                                               
+                                                <?php 
+                                               while ($rowcc = mysqli_fetch_array($querycc)){
+                                                ?>
+                                                <option value="<?php echo $rowcc['id_ncc']?>"><?php echo $rowcc['ten_ncc']?></option>
+                        
+                                                <?php
+                                                }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>
                                   
                                     <div class="row form-group">
-                                        <div class="col col-md-3"><label for="text-input" class=" form-control-label">Đơn giá</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="stt-input" name="don_gia" placeholder="nhập đơn giá của sản phẩm" class="form-control"></div>
+                                        <div class="col col-md-3"><label for="number-input" class=" form-control-label">Đơn giá</label></div>
+                                        <div class="col-12 col-md-9"><input type="number" id="stt-input" name="don_gia" placeholder="nhập đơn giá của sản phẩm" class="form-control"></div>
                                     </div>
                                     
                                     <div class="row form-group">
