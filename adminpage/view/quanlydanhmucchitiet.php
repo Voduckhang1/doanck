@@ -1,5 +1,8 @@
 
 
+<?php
+include_once '../controller/danhmuc-chitiet-controller.php';
+?>
     <div class="breadcrumbs">
         <div class="breadcrumbs-inner">
             <div class="row m-0">
@@ -37,7 +40,7 @@
                             <form  method="post" enctype="multipart/form-data" class="form-horizontal">
                                 <div class="row form-group">
                                     <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tên danh mục</label></div>
-                                    <div class="col-12 col-md-9"><input type="text" id="ten_dm_sp" name="ten_dm_sp"class="form-control" readonly="readonly"></div>
+                                    <div class="col-12 col-md-9"><input type="text" id="ten_dm_sp" name="ten_dm_sp"value="<?php if(isset($_POST['ten_dm_sp'])){echo $_POST['ten_dm_sp'];}else {echo $row['ten_dm_sp'];} ?>" class="form-control" readonly="readonly"></div>
                                 </div>
             
                             </form>
