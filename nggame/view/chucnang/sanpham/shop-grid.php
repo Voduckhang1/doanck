@@ -1,5 +1,7 @@
+<?php
 
-    <!-- Breadcrumb Section Begin -->
+include_once "../controller/shopgridcontroller.php";
+?>
     <section class="breadcrumb-section set-bg" data-setbg="img/banner/banner5.jpg">
         <div class="container">
             <div class="row">
@@ -52,22 +54,31 @@
                     </div>
                 </div>
                 <div class="row">
-                   
+                   <?php
+                   //Duyệt tất cả sản phẩm đang có trong database
+                    while ($row = mysqli_fetch_array($querysp)){
+                    ?>
                     <div class="col-lg-4 col-md-6 col-sm-6">
-                        <div class="product__item">
-                        <div class="featured__item__pic set-bg" data-setbg="img/product/call-of-duty-vanguard-ps5.jpg">
-                                <ul class="product__item__pic__hover">
-                                    <li><a href="shop-details.php"><i class="fa fa-retweet"></i></a></li>
-                                    <li><a href="shop-details.php"><i class="fa fa-shopping-cart"></i></a></li>
+                        <div class="featured__item">
+    
+                        <div class="featured__item__pic set-bg" data-setbg="../../nggame_admin/view/pictures/<?php echo $row['anh_sp']?>">
+                                <ul class="featured__item__pic__hover">
+                                <li><a href="index.php?page_layout=shop-details&id_sp=<?php echo $row['id_sp']; ?>"><i class="fa fa-search"></i></a></li>
+                                    <li><a href="index.php?page_layout=shop-grid"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="chucnang/giohang/themhang.php?id_sp=<?php echo $row['id_sp']?>"><i class="fa fa-shopping-cart"></i></a></li>
                                 </ul>
                             </div>
                             <div class="featured__item__text">
-                            <h6><a href="shop-details.php">Call of Duty: Vanguard - EU</a></h6>
-                            <h5>1,780,000₫</h5>
+                            <h6><a href="index.php?page_layout=shop-details&id_sp=<?php echo $row['id_sp']; ?>"><?php echo $row['ten_sp']; ?></a></h6>
+                            <h5><?php  echo number_format($row['don_gia'], 0, '', '.')." VNĐ"; ?></h5>
+            
+
                         </div>
                         </div>
+                  
                     </div>
-                    <div class="col-lg-4 col-md-6 col-sm-6">
+                    <?php }?>
+                    <!-- <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="product__item">
                         <div class="featured__item__pic set-bg" data-setbg="img/product/marvels-guardians-of-the-galaxy-ps5.jpg">
                                 <ul class="product__item__pic__hover">
@@ -168,12 +179,17 @@
                         </div>
                         </div>
                     </div>
-                  
+                   -->
                 </div>
-                <?php
-                //module thanh số trang 1 2 3
-                include_once './chucnang/thanhsotrang/thanhsotrang-shop-grid.php';
-                ?>
+                <div class="product__pagination">
+                    <?php
+                        //module thanh số trang 1 2 3
+                        //include_once './chucnang/thanhsotrang/thanhsotrang-shop-grid.php';
+                        echo $listpage;
+                        
+                    ?>
+                </div>
+                
             </div>
         </div>
         </div>
