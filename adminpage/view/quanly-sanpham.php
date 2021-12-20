@@ -1,4 +1,10 @@
 
+<?php
+
+$sql = "SELECT * FROM sanpham INNER JOIN danhmucsp ON sanpham.id_danhmuc=danhmucsp.id_dm_sp 
+ORDER BY id_dm_sp ASC";
+$query = mysqli_query($conn, $sql);
+?>
         <div class="breadcrumbs">
             <div class="breadcrumbs-inner">
                 <div class="row m-0">
@@ -48,7 +54,26 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php
+                                while ($row = mysqli_fetch_array($query)){ 
+                                ?>
+                                   <tr> 
                                  
+                                    <td> <?php echo $row['id_sp']?></td>
+                                    <td><?php echo $row['ten_sp']?></td>
+                                    <td> <?php echo $row['tinh_trang']?></td>
+                                    <td> <?php echo number_format( $row['don_gia'], 0, '', '.')." VNĐ";?></td>
+                            
+                        
+                                    <td style="text-align:center;"><img width="100px" src="pictures/<?php echo $row['anh_sp']?>"></td>
+                                    <td><a href="quantri.php?page_layout=quanlysanphamchitiet&id_sp=<?php echo $row['id_sp'];?>"><button type="button" class="btn btn-link">Xem</button></a></td>
+                                    <td><a href="quantri.php?page_layout=quanlysanphamedit&id_sp=<?php echo $row['id_sp'];?>"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a>
+                                    <a href="../controller/sanpham-remove-controller.php?id_sp=<?php echo $row['id_sp'];?>"> <button type="button" class="btn btn-warning btn-sm" onclick="remove(this)">Xoá</button></a>
+                                    </td>
+                                    </tr>
+                                    <?php
+                                    }
+                                    ?>
                                     </tbody>
 
                                 </table>
