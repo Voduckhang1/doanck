@@ -1,22 +1,6 @@
-<!doctype html>
-<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
-<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
-<!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
-<!--[if gt IE 8]><!-->
-<html class="no-js" lang="">
-<!--<![endif]-->
-
-<head>
-    <?php include "layout/headerpage.php"; ?>
-
-</head>
-
-<body>
-    <!-- Left Panel -->
-    <?php include "layout/headerpannel.php"; ?>
-
-    <!-- Header-->
-
+<?php
+include_once '../controller/donhangcontroller.php';
+?>
     <div class="breadcrumbs">
         <div class="breadcrumbs-inner">
             <div class="row m-0">
@@ -48,61 +32,69 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header">
-                            <strong class="card-title">Đơn hàng</strong>&nbsp;
+                            <strong class="card-title">Danh Sách Đơn Hàng</strong>&nbsp;
                         </div>
                         <div class="card-body">
-                            <a href="quanlydonhangadd.php"><button type="button" class="btn btn-primary btn-sm" style="float:right;">Thêm</button></a>
+                            <a href=""><button type="button" class="btn btn-primary btn-sm" style="float:right;">Tìm</button></a>
                             <table id="bootstrap-data-table" class="table table-striped table-bordered">
                                 <thead>
                                     <tr>
-                                        <th>STT</th>
+                                        
                                         <th>Mã đơn hàng</th>
                                         <th>Tên khách hàng</th>
-                                        <th>Ngày lập</th>
-                                        <th>Ngày giao</th>
-                                        <th>Nơi giao</th>
-                                        <th>Hình thức thanh toán</th>
+                                        <th>Ngày đặt</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Phương thức thanh toán</th>
                                         <th>Tổng thành tiền</th>
-                                        <th>Tình trạng</th>
+                                        <th>Trạng thái</th>
                                         <th>Chi tiết đơn hàng</th>
-                                        <th>Hành động</th>
+                                        
                                     </tr>
                                 </thead>
                                 <tbody>
-                                   <?php
-                                    $arrStt = array(1, 2, 3, 4, 5, 6);
-                                    $arrMa = array("100047", "100045", "100045", "100567", "100789", "100535");
-                                    $arrTen = array("Trần Quốc Trọng", "Trần Quốc Trọng", "Trần Quốc Trọng", "Trần Kim Ngân", "Lê Anh Phi", "Đặng Kiến Phong	");
-                                    $arrNgaylap = array("20/08/2021", "22/08/2021", "22/08/2021", "22/08/2021", "22/08/2021", "22/08/2021	");
-                                    $arrNgaygiao = array("22/08/2021", "22/08/2021", "22/08/2021", "22/08/2021", "22/08/2021", "22/08/2021	");
-                                    $arrNoigiao = array("Bình Chánh", "TPHCM", "Phú Yên", "TPHCM", "TPHCM", "TPHCM");
-                                    $arrTien = array("₫142.000","₫142.000", "₫142.000", "₫142.000", "₫142.000", "₫142.000");
-                                    for($i=0;$i<count($arrStt);$i++){
-                                    echo ' <tr>';
-                                    echo ' <td>' . $arrStt[$i] . '</td>';
-                                    echo  ' <td>' . $arrMa[$i] . '</td>';
-                                    echo ' <td>' . $arrTen[$i] . '</td>';
-                                    echo ' <td>' . $arrNgaylap[$i] . '</td>';
-                                    echo ' <td>' . $arrNgaygiao[$i] . '</td>';
-                                    echo ' <td>' . $arrNoigiao[$i] . '</td>';
-                                    if($arrStt[$i]==2||$arrStt[$i]==3){
-                                    echo ' <td>' . "Tiền mặt" . '</td>';
+                                <?php
+                                while ($row = mysqli_fetch_array($query)){ 
+                                ?>
+                                   <tr> 
+                                 
+                                    <td> <?php echo $row['id_don_hang']?></td>
+                                    <td><?php echo $row['ten_user']?></td>
+                                    <td><?php echo $row['ngay_dat']?></td>
+                                    <td><?php echo $row['so_dien_thoai']?></td>
+                                    <td>
+
+                                    <?php if($row['phuong_thuc_thanh_toan']=="COD")
+                                    {
+                                        ?>
+                                            <button type="button" class="btn btn-success"> <?php echo $row['phuong_thuc_thanh_toan'];?></button>
+                                        <?php
+                                    } else if($row['phuong_thuc_thanh_toan']=="Banking")
+                                    {
+                                        ?>
+                                        <button type="button" class="btn btn-primary"> <?php echo $row['phuong_thuc_thanh_toan'];?></button>
+                                    <?php 
                                     }
-                                    else{
-                                        echo ' <td>' . "Chuyển khoản" . '</td>';
+                                    ?>
+
+                                    </td>
+                                    <td><?php echo number_format( $row['thanh_tien'], 0, '', '.')." VNĐ";?></td>
+                                
+                                    
+                                    <td> <?php if($row['trang_thai']=="Nhận đơn hàng"){
+                                        ?>
+                                            <button type="button" class="btn btn-success"> <?php echo $row['trang_thai']?></button>
+                                        <?php
+                                    } else if($row['trang_thai']=="Đang giao hàng"){
+                                        ?>
+                                        <button type="button" class="btn btn-info"> <?php echo $row['trang_thai']?></button>
+                                    <?php 
                                     }
-                                    echo ' <td>' . $arrTien[$i] . '</td>';
-                                    if($arrStt[$i]==1||$arrStt[$i]==3){
-                                    echo '<td><button type="button" class="btn btn-success btn-sm">Đã giao hàng</button></td>';
-                                    }
-                                    else{
-                                        echo '<td><button type="button" class="btn btn-danger btn-sm">Chưa xử lý</button></td>';
-                                    }
-                                    echo ' <td><a href="quanlydonhangchitiet.php"><button type="button" class="btn btn-link">Xem</button></a></td>';
-                                    echo '<td><a href="quanlydonhangedit.php"><button type="button" class="btn btn-secondary btn-sm">Sửa</button></a>
-                                            <button type="button" class="btn btn-warning btn-sm"onclick="remove(this)">Xoá</button>
-                                        </td>';
-                                    echo '</tr>';
+                                    ?></td>
+                                    <td><a href="quantri.php?page_layout=quanlydonhangchitiet&id_don_hang=<?php echo $row['id_don_hang'];?>"><button type="button" class="btn btn-primary"><i class="fa fa-link"></i>&nbsp; Xem chi tiết</button></a></td>
+
+                                    </td>
+                                    </tr>
+                                    <?php
                                     }
                                     ?>
 
@@ -121,10 +113,3 @@
             <?php include "layout/buttonbackpage.php"; ?>
         </div><!-- .animated -->
     </div><!-- .content -->
-
-    <?php include "layout/footerpage.php"; ?>
-
-
-</body>
-
-</html>
