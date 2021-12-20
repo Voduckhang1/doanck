@@ -1,5 +1,7 @@
 
-
+<?php
+ include_once "../controller/nguoidungchitietController.php";
+ ?>
         <div class="breadcrumbs">
             <div class="breadcrumbs-inner">
                 <div class="row m-0">
@@ -36,20 +38,20 @@
                                    
                                 <div class="row form-group">
                                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Tên khách hàng</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="ten_user" name="ten_user" placeholder="" class="form-control" readonly="readonly"></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="ten_user" name="ten_user" value="<?php echo $row['ten_user']; ?>"placeholder="" class="form-control" readonly="readonly"></div>
                                     </div>
                         
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Số điện thoại</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="sdt" name="so_dien_thoai" placeholder="" class="form-control"readonly="readonly"></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="sdt" name="so_dien_thoai"value="<?php echo $row['so_dien_thoai']; ?>" placeholder="" class="form-control"readonly="readonly"></div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="email-input" class=" form-control-label">Email</label></div>
-                                        <div class="col-12 col-md-9"><input type="email" id="email" name="email" placeholder="" class="form-control"readonly="readonly"></div>
+                                        <div class="col-12 col-md-9"><input type="email" id="email" name="email"value="<?php echo $row['email']; ?>"  placeholder="" class="form-control"readonly="readonly"></div>
                                     </div>
                                     <div class="row form-group">
                                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Địa chỉ</label></div>
-                                        <div class="col-12 col-md-9"><input type="text" id="dia_chi" name="dia_chi" placeholder="" class="form-control"readonly="readonly"></div>
+                                        <div class="col-12 col-md-9"><input type="text" id="dia_chi" name="dia_chi"value="<?php echo $row['dia_chi']; ?>" placeholder="" class="form-control"readonly="readonly"></div>
                                     </div>
     
                                     <div  style="float:right;">
