@@ -1,4 +1,9 @@
+<?php
+ob_start();
+session_start();
+include_once "../ketnoisql/ketnoi.php";
 
+?>
 <!doctype html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang=""> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8" lang=""> <![endif]-->
@@ -52,6 +57,10 @@
                 case "quanlybaivietedit":include_once  "quanly-baiviet-edit.php";
                 break;
                 case "quanlybaivietchitiet": include_once  "quanly-baiviet-chitiet.php";
+                break;
+                case "quanlydonhang": include_once  "quanly-donhang.php";
+                break;
+                case "quanlydonhangchitiet": include_once  "quanly-donhang-chitiet.php";
                 break;
             }
         }
