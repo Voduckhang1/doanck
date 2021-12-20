@@ -131,6 +131,7 @@
                         <a href="./index.php"><img src="img/logo1.png" alt="">Game</a>
                     </div>
                 </div>
+                
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
