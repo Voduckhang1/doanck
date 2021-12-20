@@ -33,6 +33,7 @@
                     <div class="hero__item set-bg" data-setbg="img/banner/banner-3.jpg">
                         <div class="hero__text">
                             <span>NG game </span>
+                            
                             <h2>Mua game bản quyền <br />100% Uy tín</h2>
                             <a href="#" class="primary-btn">SHOP NOW</a>
                         </div>
