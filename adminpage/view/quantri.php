@@ -56,11 +56,11 @@ include_once "../ketnoisql/ketnoi.php";
                 break;
                 case "quanlybaivietedit":include_once  "quanly-baiviet-edit.php";
                 break;
-                case "quanlybaivietchitiet": include_once  "quanly-baiviet-chitiet.php";
+                case "quanlybaivietchitiet": include_once  "quanlybaivietchitiet.php";
                 break;
-                case "quanlydonhang": include_once  "quanly-donhang.php";
+                case "quanlydonhang": include_once  "quanlydonhang.php";
                 break;
-                case "quanlydonhangchitiet": include_once  "quanly-donhang-chitiet.php";
+                case "quanlydonhangchitiet": include_once  "quanlydonhangchitiet.php";
                 break;
             }
         }
