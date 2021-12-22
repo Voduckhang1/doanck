@@ -9,8 +9,10 @@ if(isset($_GET['id_sp'])){
       
         
     }else {
-       //Xoá sản phẩm 
         unset($_SESSION['giohang'][$id_sp]);
+        if($_SESSION['giohang']==null){
+            unset($_SESSION['giohang']);
+        }
       
     }
     
