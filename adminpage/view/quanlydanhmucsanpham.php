@@ -1,5 +1,6 @@
-<?php
+<!-- Cập nhật lại nhánh QL_Nguoidung lên adminpage ngày 23/12/2021 -->
 
+<?php
 include_once "../controller/danhmucsanpham.php";
 ?>
 
