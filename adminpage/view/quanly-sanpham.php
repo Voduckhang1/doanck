@@ -1,6 +1,6 @@
+<!-- Cập nhật lại nhánh QL_Sanpham lên adminpage ngày 23/12/2021 -->
 
 <?php
-
 $sql = "SELECT * FROM sanpham INNER JOIN danhmucsp ON sanpham.id_danhmuc=danhmucsp.id_dm_sp 
 ORDER BY id_dm_sp ASC";
 $query = mysqli_query($conn, $sql);
