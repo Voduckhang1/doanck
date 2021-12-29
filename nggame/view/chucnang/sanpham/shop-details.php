@@ -128,6 +128,7 @@ include_once "../controller/shopgriddetailcontroller.php";
                                         ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;
                                         Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
                                         Proin eget tortor risus.</p>
+                                        
                                 </div>
                             </div>
                         </div>
