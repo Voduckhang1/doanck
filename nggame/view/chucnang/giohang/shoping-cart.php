@@ -66,7 +66,7 @@
                             <tbody>
                                 <tr>
                                     <td class="shoping__cart__item">
-                                        <img src="../../nggame_admin/view/pictures/<?php echo $row['anh_sp']?>" alt="">
+                                        <img src="../../adminpage/view/pictures/<?php echo $row['anh_sp']?>" alt="">
                                         <h5><?php echo $row['ten_sp']?></h5>
                                     </td>
                                     <td class="shoping__cart__price">

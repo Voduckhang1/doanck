@@ -61,7 +61,7 @@ include_once "../controller/shopgridcontroller.php";
                     <div class="col-lg-4 col-md-6 col-sm-6">
                         <div class="featured__item">
     
-                        <div class="featured__item__pic set-bg" data-setbg="../../nggame_admin/view/pictures/<?php echo $row['anh_sp']?>">
+                        <div class="featured__item__pic set-bg" data-setbg="../../adminpage/view/pictures/<?php echo $row['anh_sp']?>">
                                 <ul class="featured__item__pic__hover">
                                 <li><a href="index.php?page_layout=shop-details&id_sp=<?php echo $row['id_sp']; ?>"><i class="fa fa-search"></i></a></li>
                                     <li><a href="index.php?page_layout=shop-grid"><i class="fa fa-retweet"></i></a></li>

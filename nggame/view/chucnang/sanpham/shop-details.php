@@ -29,7 +29,7 @@ include_once "../controller/shopgriddetailcontroller.php";
                     <div class="product__details__pic">
                         <div class="product__details__pic__item">
                             <img class="product__details__pic__item--large"
-                                src="../../nggame_admin/view/pictures/<?php echo $row['anh_sp']?>" alt="">
+                                src="../../adminpage/view/pictures/<?php echo $row['anh_sp']?>" alt="">
                         </div>
                         <!-- <div class="product__details__pic__slider owl-carousel">
                             <img data-imgbigurl="../../nggame_admin/view/pictures/<?php echo $row['anh_sp']?>"
@@ -149,8 +149,8 @@ include_once "../controller/shopgriddetailcontroller.php";
                 </div>
             </div>
             <div class="row">
-                <?php include_once 'sanphamtuongtu.php'; ?>
-            <!-- <div class="col-lg-3 col-md-4 col-sm-6 mix Action FPS">
+               
+            <div class="col-lg-3 col-md-4 col-sm-6 mix Action FPS">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="img/product/call-of-duty-vanguard-ps5.jpg">
                             <ul class="featured__item__pic__hover">
@@ -210,7 +210,7 @@ include_once "../controller/shopgriddetailcontroller.php";
                                 <div class="product__item__price">1,280,000₫<span>1,580,000₫</span></div>
                             </div>
                     </div>
-                </div> -->
+                </div>
         </div>
     </section>
     <!-- Related Product Section End -->
